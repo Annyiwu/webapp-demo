@@ -35,8 +35,3 @@ def calculate():
             return render_template("calculator_form.html", error=True)
     return render_template("calculator_form.html", error=None)
 
-
-@app.route("/test")
-def test():
-    nutritions = [{'name': 'Ivy', 'grade': 100}, {'name': 'Kenzi', 'grade': 90}]
-    return render_template("test.html", nutritions=nutritions)
