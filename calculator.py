@@ -2,27 +2,47 @@ import math
 
 
 def quadratic(a, b, c):
+    """solves quadratic function and return two roots.
+    a: float
+    b: float
+    c: float
+    returns None if there is no real number solution,"""
+    if a == 0 and b == 0:
+        print('Hey, this is not a function!')
+        return None
+    if a == 0:
+        print('This is a linear function.')
+        return -c / b
+
     discriminant = b ** 2 - 4 * a * c  # calculate the discriminant
 
     if discriminant >= 0:  # equation has solutions
-        x_1 = (-b + math.sqrt(discriminant)) / (2 * a)
-        x_2 = (-b - math.sqrt(discriminant)) / (2 * a)
+        x_1 = (-b + math.sqrt(discriminant)) / 2 * a
+        x_2 = (-b - math.sqrt(discriminant)) / 2 * a
         return x_1, x_2
     else:
-        print('No Real Number Solution.')
-        return None, None
+        print('No real number solution.')
+        return None
 
 
 def main():
+    print(quadratic(2, 2, 2))
+    print(quadratic(1, 4, 1))
+
     a = float(input('please enter a number:'))
     b = float(input('please enter a number:'))
     c = float(input('please enter a number:'))
-    sol_1, sol_2 = quadratic(a, b, c)
-    if sol_1:
-        print(f'The two roots are: {sol_1}, {sol_2}.')
+
+    result = quadratic(a, b, c)
+
+    if result is not None:
+        if isinstance(result, float):
+            print(f'The solution is {result}.')
+        else:
+            print(f'Two roots are {result[0]} and {result[1]}.')
     else:
-        print('No Real Number Solution.')
+        print('Sorry 😎')
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()
