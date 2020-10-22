@@ -9,11 +9,11 @@
     <h1>Calculator</h1>
     <form method="POST" name="calculator">
       {% if error %}
-      <p style="color:red">This equation does not have real number solution.</p>
-      {% endif %}
-      <p>
-        Please enter three coefficients of a quadratic function:
+      <p style="color: red">
+        This equation does not have real number solution.
       </p>
+      {% endif %}
+      <p>Please enter three coefficients of a quadratic function:</p>
       <p>
         <input type="text" size="4" name="a" />x<sup>2</sup> +
         <input type="text" size="4" name="b" />x +
